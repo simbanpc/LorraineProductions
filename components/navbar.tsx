@@ -6,23 +6,28 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { IconLayoutSidebar, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const navlinks = [
   {
-    title: "Features",
-    href: "/#features",
+    title: "Legacy",
+    href: "/#legacy",
   },
   {
-    title: "Product",
-    href: "/#product",
+    title: "Opportunity",
+    href: "/#opportunity",
   },
   {
-    title: "FAQs",
-    href: "/#faqs",
+    title: "Future",
+    href: "/#future",
   },
   {
-    title: "Pricing",
-    href: "/pricing",
+    title: "About",
+    href: "/about",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
   },
 ];
 
@@ -100,14 +105,8 @@ export const MobileNavbar = () => {
             </div>
             <div>
               <div className="flex items-center justify-end gap-4">
-                <Link
-                  href="/login"
-                  className="text-sm px-4 inline-block py-2 rounded-md text-neutral-600 dark:text-neutral-400 font-medium"
-                >
-                  Login
-                </Link>
                 <Button asChild>
-                  <Link href="/signup">Signup</Link>
+                  <Link href="/contact">Work with us</Link>
                 </Button>
               </div>
             </div>
@@ -134,14 +133,9 @@ export const DesktopNavbar = () => {
         ))}
       </div>
       <div className="flex items-center gap-4">
-        <Link
-          href="/login"
-          className="text-sm px-4 inline-block py-2 rounded-md text-neutral-600 dark:text-neutral-400 font-medium"
-        >
-          Login
-        </Link>
+        <ModeToggle/>
         <Button asChild>
-          <Link href="/signup">Signup</Link>
+          <Link href="/contact">Work with us</Link>
         </Button>
       </div>
     </Container>

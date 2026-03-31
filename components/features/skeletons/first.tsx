@@ -1,10 +1,9 @@
 import { cn } from "@/lib/utils";
 import {
-  IconCircleDashedCheck,
+  IconChartBar,
+  IconBuildingBank,
+  IconTrendingUp,
   IconClock,
-  IconExclamationCircle,
-  IconPrison,
-  IconRipple,
 } from "@tabler/icons-react";
 import React from "react";
 
@@ -12,25 +11,42 @@ export const SkeletonOne = () => {
   return (
     <div className="perspective-distant rotate-z-15 -rotate-y-20 rotate-x-30 scale-[1.2] h-full w-full -translate-y-10 mask-radial-from-50% mask-r-from-50%">
       <SkeletonCard
-        className="absolute bottom-0 left-12  max-w-[90%] z-30"
-        icon={<IconCircleDashedCheck className="size-4" />}
-        title="Campaign Planner"
-        description="Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."
-        badge={<Badge text="120S" variant="danger" />}
+        className="absolute bottom-0 left-12 max-w-[90%] z-30"
+        icon={
+          <div className="flex size-7 items-center justify-center rounded-full bg-[#C8A96A]/15 text-[#C8A96A]">
+            <IconChartBar className="size-4" />
+          </div>
+        }
+        title="Market Analysis"
+        description="Evaluating regional trends, asset performance, and growth indicators to identify high-potential opportunities."
+        badge={<Badge text="ACTIVE" variant="gold" />}
+        tags={["Market Trends", "Asset Value", "Growth"]}
       />
+
       <SkeletonCard
         className="absolute bottom-8 left-8 z-20"
-        icon={<IconExclamationCircle className="size-4" />}
-        title="Issue Tracker"
-        description="Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."
-        badge={<Badge text="10S" variant="success" />}
+        icon={
+          <div className="flex size-7 items-center justify-center rounded-full bg-[#0B1F3A]/10 text-[#0B1F3A] dark:bg-white/10 dark:text-white">
+            <IconBuildingBank className="size-4" />
+          </div>
+        }
+        title="Portfolio Review"
+        description="Reviewing current holdings, long-term value, and strategic alignment to support sustainable decision-making."
+        badge={<Badge text="REVIEW" variant="navy" />}
+        tags={["Portfolio", "Value", "Strategy"]}
       />
+
       <SkeletonCard
         className="absolute bottom-20 left-4 max-w-[80%] z-10"
-        icon={<IconPrison className="size-4" />}
-        title="Risk Analysis"
-        description="Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."
-        badge={<Badge text="40s" variant="warning" />}
+        icon={
+          <div className="flex size-7 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+            <IconTrendingUp className="size-4" />
+          </div>
+        }
+        title="Opportunity Forecast"
+        description="Highlighting projected upside, acquisition potential, and investment pathways backed by thoughtful analysis."
+        badge={<Badge text="INSIGHT" variant="success" />}
+        tags={["Forecast", "Returns", "Opportunity"]}
       />
     </div>
   );
@@ -41,35 +57,41 @@ const SkeletonCard = ({
   title,
   description,
   badge,
+  tags,
   className,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
   badge: React.ReactNode;
+  tags: string[];
   className?: string;
 }) => {
   return (
     <div
       className={cn(
-        "max-w-[85%] h-fit my-auto bg-white dark:bg-neutral-900 mx-auto w-full p-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 shadow-2xl",
+        "max-w-[85%] h-fit my-auto mx-auto w-full rounded-2xl border p-3 shadow-2xl",
+        "border-[#C8A96A]/20 bg-white/95 text-[#0B1F3A]",
+        "dark:border-[#C8A96A]/15 dark:bg-[#102746] dark:text-white",
         className
       )}
     >
-      <div className="flex gap-3 items-center">
+      <div className="flex items-center gap-3">
         {icon}
-        <p className="text-xs md:text-sm font-normal text-black dark:text-white">
+        <p className="text-xs md:text-sm font-medium">
           {title}
         </p>
-        {badge}
+        <div className="ml-auto">{badge}</div>
       </div>
-      <p className="text-[10px] md:text-sm text-neutral-500 dark:text-neutral-400 font-light mt-3">
+
+      <p className="mt-3 text-[10px] md:text-sm font-light text-neutral-600 dark:text-neutral-300">
         {description}
       </p>
-      <div className="flex items-center gap-2 flex-wrap mt-4">
-        <Tag text="Google Ads" />
-        <Tag text="SaaS" />
-        <Tag text="Content" />
+
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        {tags.map((tag) => (
+          <Tag key={tag} text={tag} />
+        ))}
       </div>
     </div>
   );
@@ -77,7 +99,7 @@ const SkeletonCard = ({
 
 const Tag = ({ text }: { text: string }) => {
   return (
-    <div className="px-2 text-[10px] md:text-sm py-1 rounded-sm bg-neutral-200 dark:bg-neutral-700">
+    <div className="rounded-full border border-[#C8A96A]/20 bg-[#C8A96A]/10 px-2.5 py-1 text-[10px] md:text-xs font-medium text-[#0B1F3A] dark:border-[#C8A96A]/20 dark:bg-[#C8A96A]/10 dark:text-white">
       {text}
     </div>
   );
@@ -87,24 +109,23 @@ const Badge = ({
   variant = "success",
   text,
 }: {
-  variant?: "danger" | "success" | "warning";
+  variant?: "gold" | "navy" | "success";
   text: string;
 }) => {
   return (
     <div
       className={cn(
-        "px-1 py-0.5 rounded-full flex border items-center gap-1 w-fit",
-
-        variant === "danger" && "bg-red-300/10 border-red-300 text-red-500",
-        variant === "warning" &&
-          "bg-yellow-300/10 border-yellow-300 text-yellow-500",
+        "flex w-fit items-center gap-1 rounded-full border px-2 py-1",
+        variant === "gold" &&
+          "border-[#C8A96A]/30 bg-[#C8A96A]/15 text-[#C8A96A]",
+        variant === "navy" &&
+          "border-[#0B1F3A]/20 bg-[#0B1F3A]/10 text-[#0B1F3A] dark:border-white/10 dark:bg-white/10 dark:text-white",
         variant === "success" &&
-          "bg-green-300/10 border-green-300 text-green-500"
+          "border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
       )}
     >
-      <IconClock className={cn("size-3")} />
-      <IconRipple className="size-3" />
-      <p className="text-[10px] font-bold">{text}</p>
+      <IconClock className="size-3" />
+      <p className="text-[10px] font-bold tracking-wide">{text}</p>
     </div>
   );
 };

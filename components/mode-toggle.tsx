@@ -45,7 +45,7 @@ export const ModeToggle = () => {
   return (
     <button
       onClick={SWITCH}
-      className="size-4 flex items-center justify-center relative"
+      className="size-4 flex items-center justify-center relative cursor-pointer"
     >
       <SunIcon
         size={14}

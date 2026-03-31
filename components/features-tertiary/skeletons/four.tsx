@@ -1,96 +1,51 @@
 "use client";
+import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
 import {
-  CogIcon,
-  ErrorIcon,
-  FileIcon,
-  HubspotIcon,
-  SalesforceIcon,
-  SheetsIcon,
-} from "@/icons";
-import { cn } from "@/lib/utils";
-import {
-  IconClipboardData,
-  IconFeatherFilled,
-  IconFileDotsFilled,
-  IconFilter2Search,
-  IconPointerUp,
-} from "@tabler/icons-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+  BadgeCheck,
+  BriefcaseBusiness,
+  Megaphone,
+  Mic,
+} from "lucide-react";
 
 export const SkeletonFour = () => {
   const items = [
     {
-      title: "Brand & Style",
-      icon: <IconClipboardData className="size-4 text-blue-500" />,
-      className:
-        "bg-blue-100 border border-blue-200 dark:bg-blue-100/10 dark:border-blue-200/10",
+      title: "Speaking Engagements",
+      icon: <Mic className="size-4" />,
+      eyebrow: "Public Presence",
       description:
-        "Link CRMs, helpdesks, and APIs to give agents secure, role-based access.",
-      tags: [
-        { text: "Salesforce", icon: <SalesforceIcon className="size-3" /> },
-        { text: "Hubspot", icon: <HubspotIcon className="size-3" /> },
-        { text: "Sheets", icon: <SheetsIcon className="size-3" /> },
-      ],
+        "Delivering thoughtful, purpose-driven conversations centered on leadership, business growth, real estate, and community impact.",
+      tags: ["Keynotes", "Panels", "Leadership", "Business"],
+      statLabel: "Formats",
+      statValue: "Keynote • Panel • Fireside",
     },
     {
-      title: "Compliance & Policy",
-      icon: <IconFileDotsFilled className="size-4 text-green-500" />,
-      className:
-        "bg-green-100 border border-green-200 dark:bg-green-100/10 dark:border-green-200/10",
+      title: "Community Advocacy",
+      icon: <Megaphone className="size-4" />,
+      eyebrow: "Community Voice",
       description:
-        "Ensure your AI agents follow company policies and regulatory requirements with built-in compliance controls.",
-      tags: [
-        { text: "Salesforce", icon: <SalesforceIcon className="size-3" /> },
-        { text: "Hubspot", icon: <HubspotIcon className="size-3" /> },
-        { text: "Sheets", icon: <SheetsIcon className="size-3" /> },
-      ],
+        "Advancing conversations that create access, strengthen communities, and open the door to long-term opportunity and sustainable growth.",
+      tags: ["Advocacy", "Access", "Opportunity", "Impact"],
+      statLabel: "Focus",
+      statValue: "Equity • Access • Growth",
     },
     {
-      title: "Content Safety Filters",
-      icon: <IconFeatherFilled className="size-4 text-indigo-500" />,
-      className:
-        "bg-indigo-100 border border-indigo-200 dark:bg-indigo-100/10 dark:border-indigo-200/10",
+      title: "Business Advocacy",
+      icon: <BriefcaseBusiness className="size-4" />,
+      eyebrow: "Business & Growth",
       description:
-        "Protect your brand from harmful content with built-in safety filters that block sensitive or inappropriate material.",
-      tags: [
-        { text: "Salesforce", icon: <SalesforceIcon className="size-3" /> },
-        { text: "Hubspot", icon: <HubspotIcon className="size-3" /> },
-        { text: "Sheets", icon: <SheetsIcon className="size-3" /> },
-      ],
-    },
-    {
-      title: "Approval Triggers",
-      icon: <IconPointerUp className="size-4 text-neutral-500" />,
-      className:
-        "bg-neutral-100 border border-neutral-200 dark:bg-neutral-100/10 dark:border-neutral-200/10",
-      description:
-        "Automatically trigger approvals based on predefined criteria, ensuring timely review and compliance.",
-      tags: [
-        { text: "Salesforce", icon: <SalesforceIcon className="size-3" /> },
-        { text: "Hubspot", icon: <HubspotIcon className="size-3" /> },
-        { text: "Sheets", icon: <SheetsIcon className="size-3" /> },
-      ],
-    },
-    {
-      title: "Output Quality Checks",
-      icon: <IconFilter2Search className="size-4 text-purple-500" />,
-      className:
-        "bg-purple-100 border border-purple-200 dark:bg-purple-100/10 dark:border-purple-200/10",
-      description:
-        "Automatically trigger approvals based on predefined criteria, ensuring timely review and compliance.",
-      tags: [
-        { text: "Salesforce", icon: <SalesforceIcon className="size-3" /> },
-        { text: "Hubspot", icon: <HubspotIcon className="size-3" /> },
-        { text: "Sheets", icon: <SheetsIcon className="size-3" /> },
-      ],
+        "Supporting conversations around entrepreneurship, operational growth, and business development with a focus on long-term value and legacy.",
+      tags: ["Consulting", "Growth", "Strategy", "Legacy"],
+      statLabel: "Themes",
+      statValue: "Business • Strategy • Legacy",
     },
   ];
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const currentIndexRef = useRef(0);
-
   const [selected, setSelected] = useState(items[0]);
 
   useEffect(() => {
@@ -104,7 +59,7 @@ export const SkeletonFour = () => {
     intervalRef.current = setInterval(() => {
       currentIndexRef.current = (currentIndexRef.current + 1) % items.length;
       setSelected(items[currentIndexRef.current]);
-    }, 2000);
+    }, 2500);
   };
 
   const stopAutoplay = () => {
@@ -113,38 +68,109 @@ export const SkeletonFour = () => {
       intervalRef.current = null;
     }
   };
+
+  const handleSelect = (item: (typeof items)[number], idx: number) => {
+    currentIndexRef.current = idx;
+    setSelected(item);
+    startAutoplay();
+  };
+
   return (
-    <div>
-      <div className="flex gap-4 items-center justify-center max-w-lg mx-auto flex-wrap mb-4">
-        {items.map((item, idx) => (
-          <button
-            key={item.title}
-            onClick={() => setSelected(item)}
-            className={cn(
-              "px-2 py-1 rounded-sm relative text-xs gap-1 cursor-pointer active:scale-98 transition duration-200 flex items-center justify-center opacity-50",
-              selected.title === item.title && "opacity-100",
-              item.className
-            )}
-          >
-            {selected.title === item.title && (
-              <motion.div
-                layoutId="selected-item"
-                className="absolute inset-0 rounded-[5px] shadow-inner"
-              ></motion.div>
-            )}
-            {item.icon}
-            {item.title}
-          </button>
-        ))}
+    <div className="w-full">
+      <div className="mb-4 flex max-w-xl flex-wrap items-center justify-center gap-2 mx-auto">
+        {items.map((item, idx) => {
+          const isActive = selected.title === item.title;
+
+          return (
+            <button
+              key={item.title}
+              onClick={() => handleSelect(item, idx)}
+              className={cn(
+                "cursor-pointer relative flex items-center justify-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-medium transition duration-200 active:scale-[0.98]",
+                "border-neutral-200 bg-white text-[#0B1F3A] dark:border-white/10 dark:bg-white/5 dark:text-white",
+                "hover:border-[#C8A96A]/50 hover:bg-[#C8A96A]/10",
+                isActive && "border-[#C8A96A] bg-[#C8A96A]/15 text-[#0B1F3A] dark:text-[#F8FAFC]"
+              )}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="selected-speaking-item"
+                  className="absolute inset-0 rounded-full ring-1 ring-[#C8A96A]/40"
+                />
+              )}
+              <span className="relative z-10 text-[#C8A96A]">{item.icon}</span>
+              <span className="relative z-10">{item.title}</span>
+            </button>
+          );
+        })}
       </div>
-      <div className="flex-1 rounded-t-3xl gap-2 flex flex-col bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-200 max-w-[20rem] lg:max-w-sm mx-auto w-full h-full absolute inset-x-0 p-2">
-        <Card
-          topIcon={selected.icon}
-          title={selected.title}
-          description={selected.description}
-          tags={selected.tags}
-          className={selected.className}
-        />
+
+      <div className="absolute inset-x-0 mx-auto h-full w-full max-w-[20rem] rounded-t-3xl border border-neutral-200 bg-neutral-100 p-2 dark:border-neutral-700 dark:bg-neutral-800 lg:max-w-sm">
+        <div className="flex h-full flex-col rounded-[1.4rem] border border-neutral-200/80 bg-white/95 p-4 dark:border-white/10 dark:bg-[#102746]">
+          <motion.div
+            key={selected.title}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
+            className="flex h-full flex-col"
+          >
+            <div className="mb-4 flex items-start justify-between gap-3">
+              <div>
+                <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
+                  {selected.eyebrow}
+                </p>
+                <h3 className="text-lg font-bold text-[#0B1F3A] dark:text-white">
+                  {selected.title}
+                </h3>
+              </div>
+
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[#0B1F3A] text-white dark:bg-[#C8A96A] dark:text-[#0B1F3A]">
+                {selected.icon}
+              </div>
+            </div>
+
+            <div className="mb-4 rounded-2xl border border-[#C8A96A]/20 bg-[#C8A96A]/10 p-3 dark:border-[#C8A96A]/20 dark:bg-[#C8A96A]/10">
+              <div className="mb-2 flex items-center gap-2 text-[#0B1F3A] dark:text-white">
+                <BadgeCheck className="size-4 text-[#C8A96A]" />
+                <p className="text-xs font-semibold">Featured Focus</p>
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+                {selected.description}
+              </p>
+            </div>
+
+            <div className="mb-4 flex flex-wrap gap-2">
+              {selected.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-neutral-200 bg-neutral-50 px-2.5 py-1 text-[11px] font-medium text-[#0B1F3A] dark:border-white/10 dark:bg-white/5 dark:text-white"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-auto grid grid-cols-2 gap-2">
+              <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-3 dark:border-white/10 dark:bg-white/5">
+                <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
+                  Speaking & Advocacy
+                </p>
+                <p className="text-sm font-semibold text-[#0B1F3A] dark:text-white">
+                  Leadership Through Presence
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-3 dark:border-white/10 dark:bg-white/5">
+                <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
+                  {selected.statLabel}
+                </p>
+                <p className="text-sm font-semibold text-[#0B1F3A] dark:text-white">
+                  {selected.statValue}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

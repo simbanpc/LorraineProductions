@@ -12,17 +12,20 @@ export const Hero = () => {
     <section className="pt-10 md:pt-20 lg:pt-32 relative overflow-hidden">
       <Container>
         <Heading as="h1">
-          Agents that do the work <br /> Approvals that keep you safe.
+          Building Legacy.
+          <br />
+          Creating Opportunity. 
+          <br />
+          Empowering the Future.
         </Heading>
 
         <Subheading className="py-8">
-          Deploy AI agents that plan, act through your tools, and report
-          outcomes—without changing how your teams work.
+          Real Estate • Business Consulting • Mentorship & Leadership
         </Subheading>
         <div className="flex items-center gap-6">
-          <Button className="shadow-brand">Start your free trial</Button>
+          <Button className="shadow-brand"><Link href="/contact">Work with us</Link></Button>
           <Button asChild variant="outline">
-            <Link href="#">View role based demos</Link>
+            <Link href="#legacy">Learn more</Link>
           </Button>
         </div>
         <LandingImages />

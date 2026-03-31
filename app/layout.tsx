@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -16,9 +18,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Agenforce Marketing Template",
+  title: "Lorraine Productions",
   description:
-    "Agenforce is a multipurpose marketing template built with Next.js, Typescript, Tailwind CSS and Motion for react.",
+    "Building Legacy. Creating Opportunity. Empowering the Future. Real Estate. Business Consulting. Mentorship & Leadership.",
+  openGraph: {
+    title: "Lorraine Productions",
+    description: "Building Legacy. Creating Opportunity. Empowering the Future. Real Estate. Business Consulting. Mentorship & Leadership.",
+    siteName: "Lorraine Productions",
+    url: ""
+  },
+  twitter:{
+    title: "Lorraine Productions",
+    description: "Building Legacy. Creating Opportunity. Empowering the Future. Real Estate. Business Consulting. Mentorship & Leadership.",
+    site: "",
+    card: "summary"
+  }
 };
 
 export default function RootLayout({
@@ -28,14 +42,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${manrope.variable} ${inter.variable} antialiased  `}>
+      <body className={`${manrope.variable} ${inter.variable} antialiased `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="bg-background text-foreground">{children}</main>
+          <main className="bg-background text-foreground">
+            <Navbar />
+              {children}
+            <Footer />
+          </main>
         </ThemeProvider>
       </body>
     </html>

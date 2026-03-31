@@ -5,8 +5,8 @@ import React from "react";
 import { motion } from "motion/react";
 
 export const LandingImages = ({
-  firstImageSrc = "https://assets.aceternity.com/screenshots/4.jpg",
-  secondImageSrc = "https://assets.aceternity.com/screenshots/3.jpg",
+  firstImageSrc = "/Hero image.avif",
+  secondImageSrc = "/Hero image.avif",
   showGradient = true,
 }) => {
   return (
@@ -35,7 +35,7 @@ export const LandingImages = ({
         >
           <Image
             src={firstImageSrc}
-            alt="Demo 1 for agenforce template"
+            alt="LorraineProductions.png"
             height={1080}
             width={1920}
             draggable={false}
@@ -69,7 +69,7 @@ export const LandingImages = ({
         >
           <Image
             src={secondImageSrc}
-            alt="Demo 1 for agenforce template"
+            alt="LorraineProductions.png"
             height={1080}
             width={1920}
             draggable={false}

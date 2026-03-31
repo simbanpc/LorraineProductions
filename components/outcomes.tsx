@@ -9,20 +9,24 @@ export const Outcomes = () => {
   return (
     <section className="pt-10 md:pt-20 lg:pt-32 relative overflow-hidden">
       <Container>
-        <Heading>
-          Governed AI, <br />
-          Trusted Outcomes
-        </Heading>
+        <div
+        id="future"
+        >
+          <Heading>
+            Empowering the Future
+            <br />
+            Through Leadership
+          </Heading>
 
-        <Subheading className="py-8">
-          Deploy AI agents with built-in approvals, brand guardrails, and audit
-          trails. Every step is visible, reviewable, and compliant.
-        </Subheading>
+          <Subheading className="py-8">
+            Our work is rooted in the belief that true success is measured by what we build for others. Through mentorship, leadership, and community-centered investment, Lorraine Productions LLC is committed to equipping the next generation with the confidence, support, and opportunities needed to thrive.
+          </Subheading>
 
-        <LandingImages
-          firstImageSrc={"https://assets.aceternity.com/screenshots/5.jpg"}
-          secondImageSrc={"https://assets.aceternity.com/screenshots/6.jpg"}
-        />
+          <LandingImages
+            firstImageSrc={"/Hero image.avif"}
+            secondImageSrc={"/Hero image.avif"}
+          />
+        </div>
       </Container>
       <GradientDivider />
     </section>

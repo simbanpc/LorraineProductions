@@ -1,5 +1,4 @@
 "use client";
-
 import { LogoIcon } from "@/components/logo";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -18,8 +17,8 @@ export const SkeletonTwo = () => {
         <Item />
         <Item src="https://images.unsplash.com/photo-1654110455429-cf322b40a906?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1760" />
         <Item containerClassName="from-black/50 via-transparent to-black/50">
-          <div className="h-full w-full bg-white dark:bg-neutral-900 rounded-[12px] flex items-center justify-center">
-            <LogoIcon className="size-12" />
+          <div className="h-full w-full bg-neutral-100 dark:bg-neutral-800 rounded-[12px] flex items-center justify-center">
+            <LogoIcon className="size-14" />
           </div>
         </Item>
         <Item src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1760" />
@@ -67,8 +66,8 @@ const Item = ({
           delay: Math.random() * 0.8 + 0.2,
         }}
         className={cn(
-          "flex items-center justify-center w-full h-full  rounded-[12px] p-[1px] relative z-10",
-          src && "bg-gradient-to-br from-blue-500 via-transparent to-blue-500",
+          "flex items-center justify-center w-full h-full rounded-[12px] p-[1px] relative z-10",
+          src && "bg-gradient-to-br from-[#C8A96A] via-transparent to-[#C8A96A]",
           containerClassName
         )}
       >

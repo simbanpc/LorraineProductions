@@ -1,11 +1,11 @@
 import { ArrowIconReverse, ArrowIllustration } from "@/illustrations/grid";
 import { cn } from "@/lib/utils";
-import { IconSettings, IconSparkles } from "@tabler/icons-react";
+import { IconBulb, IconSparkles } from "@tabler/icons-react";
 import React from "react";
 
 export const SkeletonThree = () => {
   return (
-    <div className="flex-1 rounded-t-3xl gap-2 flex flex-col z-20 mx-auto w-full h-full absolute  inset-0 pt-2 px-2 perspective-[4000px] max-w-lg">
+    <div className="flex-1 rounded-t-3xl gap-2 flex flex-col z-20 mx-auto w-full h-full absolute inset-0 pt-2 px-2 perspective-[4000px] max-w-lg">
       <ArrowIllustration className="absolute left-40 -top-4 mx-auto z-30" />
       <ArrowIconReverse className="absolute left-32 -bottom-10 mx-auto blur-[2px]" />
       <div
@@ -21,13 +21,13 @@ export const SkeletonThree = () => {
           transform: "rotateY(20deg) rotateX(50deg) rotateZ(40deg)",
         }}
       >
-        <div className="px-4 py-2 rounded-full bg-orange-100 border border-orange-300 text-orange-500 font-medium flex items-center gap-2">
-          <IconSettings className="size-4" />
-          <span>Processing</span>
+        <div className="px-4 py-2 rounded-full bg-[#C8A96A]/15 text-[#C8A96A] border border-[#C8A96A]/30 font-medium flex items-center gap-2">
+          <IconBulb className="size-4" />
+          <span>Strategy</span>
         </div>
-        <div className="px-4 py-2 rounded-full bg-green-100 border border-green-300 text-green-500 font-medium flex items-center gap-2">
+        <div className="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium flex items-center gap-2">
           <IconSparkles className="size-4" />
-          <span>Feedback</span>
+          <span>Execution</span>
         </div>
       </div>
     </div>

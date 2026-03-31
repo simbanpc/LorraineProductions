@@ -5,87 +5,79 @@ import { Subheading } from "./subheading";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import {
+  IconBrandFacebook,
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandTwitter,
-  IconSend,
+  IconBrandX,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
+import Image from "next/image";
 
 export const Footer = () => {
   const product = [
     {
-      title: "Agent Simulator",
-      href: "#",
+      title: "Westside Venture Partners",
+      href: "https://westsideventurepartners.org/",
+      image:""
     },
     {
-      title: "AI Workflows",
-      href: "#",
+      title: "Women on the Cap Table",
+      href: "https://www.womencaptable.com/",
+      image:"/wct-white.png"
     },
     {
-      title: "Agent Builder",
-      href: "#",
+      title: "Douglassaires Association",
+      href: "https://www.douglassaires1907.com/",
+      image:"/douglassaires.png"
     },
     {
-      title: "Analytics Dashboard",
-      href: "#",
+      title: "Cool Girls",
+      href: "https://thecoolgirls.org/",
+      image:"/cropped-Cool-Girls-Logo.png"
     },
     {
-      title: "API Integration",
-      href: "#",
+      title: "Latinas Rise",
+      href: "https://latinasrise.org/",
+      image:"/Latinas-Rise-Full.png"
     },
     {
-      title: "Enterprise Solutions",
-      href: "#",
+      title: "Golden Seeds",
+      href: "https://www.goldenseeds.com/",
+      image:"/goldenSeeds.svg"
     },
   ];
 
   const company = [
     {
-      title: "About Us",
-      href: "#",
+      title: "Legacy",
+      href: "/#legacy",
     },
     {
-      title: "Careers",
-      href: "#",
+      title: "Opportunity",
+      href: "/#opportunity",
     },
     {
-      title: "Press",
-      href: "#",
+      title: "Future",
+      href: "/#future",
+    },
+    {
+      title: "About",
+      href: "/about",
     },
     {
       title: "Contact",
-      href: "#",
-    },
-    {
-      title: "Blog",
-      href: "#",
+      href: "/contact",
     },
   ];
 
   return (
-    <footer className="border-t perspective-distant overflow-hidden border-neutral-200 dark:border-neutral-800 py-10 md:py-20 lg:py-32 relative">
-      <Container className="grid grid-cols-1 lg:grid-cols-5 gap-10 relative z-20">
+    <footer className="border-t perspective-distant overflow-hidden border-neutral-200 dark:border-neutral-800 py-10 md:py-20 lg:py-32 relative w-full">
+      <Container className="relative z-20 flex flex-col gap-10 lg:flex-row lg:justify-between">
         <div className="lg:col-span-2 flex flex-col gap-4 items-start">
           <Logo />
-          <Subheading>Safe, observable, outcome-driven AI</Subheading>
-          <Button className="shadow-brand">Start a 30-day trial</Button>
-        </div>
-        <div className="flex flex-col gap-4">
-          <h4 className="text-base font-medium text-neutral-400">Product</h4>
-          <ul className="list-none flex flex-col gap-2">
-            {product.map((item, index) => (
-              <li key={item.title}>
-                <Link
-                  href={item.href}
-                  className="text-neutral-600 text-sm hover:text-black dark:text-neutral-400 dark:hover:text-white transition duration-200"
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <Subheading>Real Estate • Business Consulting • Mentorship & Leadership</Subheading>
+          <Button className="shadow-brand"><Link href="/contact">Work with us</Link></Button>
         </div>
         <div className="flex flex-col gap-4">
           <h4 className="text-base font-medium text-neutral-400">Company</h4>
@@ -103,26 +95,46 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-4">
-          <h4 className="text-base font-medium text-neutral-400">Newsletter</h4>
-          <div className="border relative border-neutral-200  flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 dark:border-neutral-700 rounded-md">
-            <input
-              className="bg-transparent outline-none py-2 pl-2 pr-12 placeholder-neutral-400 text-neutral-600 text-sm"
-              type="email"
-              placeholder="Your email"
-            />
-            <button className="cursor-pointer px-4 py-2 rounded-[7px] bg-black inset-y-0 right-0 absolute">
-              <IconSend className="text-white size-4" />
-            </button>
-          </div>
-          <Subheading className="text-sm md:text-sm lg:text-sm">
-            Get the latest product news and behind the scenes updates.
-          </Subheading>
+          <h4 className="text-base font-medium text-neutral-400">Associated Organizations</h4>
+          <ul className="list-none flex flex-col gap-2">
+            {product.map((item) => (
+                <li key={item.title} className="flex items-center gap-2">
+                  <Link
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                    <div
+                      className="text-sm text-neutral-600 transition duration-200 hover:text-black dark:text-neutral-400 dark:hover:text-white"
+                    >
+                      {item.title}
+                    </div>
+                  </Link>
+                  <Link
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      height={32}
+                      width={32}
+                      draggable={false}
+                      className="shrink-0 object-contain"
+                    />
+                  )}
+                  </Link>
+                </li>
+            ))}
+          </ul>
         </div>
       </Container>
 
       <Container className="flex flex-col sm:flex-row justify-between mt-10 relative z-20 gap-4 md:gap-0">
         <p className="text-sm text-neutral-500">
-          &copy; {new Date().getFullYear()} Agenforce AI. All rights reserved.
+          &copy; {new Date().getFullYear()} Lorraine Productions LLC. All rights reserved.
         </p>
 
         <div className="flex md:items-end items-start flex-col gap-4">
@@ -134,14 +146,17 @@ export const Footer = () => {
           </div>
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <Link href="/">
-              <IconBrandTwitter className="size-4" />
+            <Link href="/" target="_blank" rel="noopener noreferrer">
+              <IconBrandX className="size-4" />
             </Link>
-            <Link href="/">
+            <Link href="/" target="_blank" rel="noopener noreferrer">
               <IconBrandInstagram className="size-4" />
             </Link>
-            <Link href="/">
+            <Link href="/" target="_blank" rel="noopener noreferrer">
               <IconBrandLinkedin className="size-4" />
+            </Link>
+            <Link href="/" target="_blank" rel="noopener noreferrer">
+              <IconBrandFacebook className="size-4" />
             </Link>
           </div>
         </div>

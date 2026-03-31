@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import {
   IconCheck,
-  IconCircleCheckFilled,
   IconCircleDashedCheck,
   IconLoader2,
   IconRipple,
@@ -15,51 +14,56 @@ export const SkeletonTwo = () => {
         transform: "rotateY(20deg) rotateX(20deg) rotateZ(-20deg)",
       }}
       className={cn(
-        "max-w-[85%] group h-full my-auto bg-neutral-100 dark:bg-neutral-900 mx-auto w-full p-3 rounded-2xl border border-neutral-300 dark:border-neutral-700 shadow-2xl flex flex-col mask-radial-from-50% mask-b-from-50%",
-        "translate-x-10",
-        "[--pattern-fg:var(--color-neutral-950)]/5  dark:[--pattern-fg:var(--color-white)]/10"
+        "max-w-[85%] group h-full my-auto mx-auto w-full p-3 rounded-2xl border shadow-2xl flex flex-col mask-radial-from-50% mask-b-from-50%",
+        "translate-x-10 bg-[#f8f5ef] dark:bg-[#0F2747] border-[#C8A96A]/25 dark:border-[#C8A96A]/20",
+        "[--pattern-fg:#0B1F3A]/[0.06] dark:[--pattern-fg:#ffffff]/[0.08]"
       )}
     >
       <div className="flex gap-3 items-center">
-        <IconCircleDashedCheck className="size-4" />
-        <p className="text-sm font-normal text-black dark:text-white">
-          Campaign Planner
+        <div className="flex size-7 items-center justify-center rounded-full bg-[#C8A96A]/15 text-[#C8A96A]">
+          <IconCircleDashedCheck className="size-4" />
+        </div>
+        <p className="text-sm font-medium text-[#0B1F3A] dark:text-white">
+          Strategic Guidance
         </p>
       </div>
-      <div className="relative  flex-1 bg-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 mt-4 border border-neutral-200 rounded-2xl">
+
+      <div className="relative flex-1 mt-4 rounded-2xl border border-[#C8A96A]/20 bg-[#efe7d8] dark:bg-[#102746] dark:border-[#C8A96A]/15">
         <Pattern />
-        <div className="absolute rounded-2xl translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:-translate-y-0 transition-all duration-300 inset-0 bg-white dark:bg-neutral-900 h-full w-full">
+
+        <div className="absolute inset-0 h-full w-full rounded-2xl translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:-translate-y-0 transition-all duration-300 bg-white dark:bg-[#0B1F3A]">
           <Row
-            icon={<IconCheck className="size-3 stroke-white fill-green-500" />}
-            text="Fetching Data"
-            time="10s"
-          />
-          <GradientHr />
-          <Row
-            icon={<IconCheck className="size-3 stroke-white fill-green-500" />}
-            text="Processing Data"
-            time="20s"
+            icon={<IconCheck className="size-3 stroke-white fill-[#C8A96A]" />}
+            text="Opportunity Assessment"
+            time="01"
           />
           <GradientHr />
 
           <Row
-            icon={<IconCheck className="size-3 stroke-white fill-green-500" />}
-            text="Performing Action"
-            time="30s"
+            icon={<IconCheck className="size-3 stroke-white fill-[#C8A96A]" />}
+            text="Market Review"
+            time="02"
           />
           <GradientHr />
 
           <Row
-            icon={<IconCheck className="size-3 stroke-white fill-green-500" />}
-            text="Waiting"
-            time="40s"
+            icon={<IconCheck className="size-3 stroke-white fill-[#C8A96A]" />}
+            text="Growth Planning"
+            time="03"
           />
           <GradientHr />
 
           <Row
-            icon={<IconLoader2 className="size-3 text-white animate-spin" />}
-            text="Generating Report"
-            time="50s"
+            icon={<IconCheck className="size-3 stroke-white fill-[#C8A96A]" />}
+            text="Operational Alignment"
+            time="04"
+          />
+          <GradientHr />
+
+          <Row
+            icon={<IconLoader2 className="size-3 animate-spin text-[#C8A96A]" />}
+            text="Strategic Roadmap"
+            time="05"
             variant="warning"
           />
         </div>
@@ -91,8 +95,8 @@ const Row = ({
         <div
           className={cn(
             "size-4 flex items-center justify-center rounded-full",
-            variant === "success" && "bg-green-500",
-            variant === "warning" && "bg-yellow-500"
+            variant === "success" && "bg-emerald-500",
+            variant === "warning" && "bg-[#0B1F3A]"
           )}
         >
           {icon}

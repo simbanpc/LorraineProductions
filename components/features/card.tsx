@@ -11,7 +11,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "max-w-l mx-auto bg-neutral-50 dark:bg-neutral-800 rounded-lg",
+        "w-full mx-auto rounded-[1.25rem] border border-[#C8A96A]/20 bg-neutral-100 text-[#0B1F3A] shadow-[0_10px_30px_rgba(11,31,58,0.08)] dark:border-[#C8A96A]/15 dark:bg-neutral-800 dark:text-white",
         className
       )}
     >
@@ -30,7 +30,7 @@ export const CardContent = ({
   return (
     <div
       className={cn(
-        "px-4 md:px-8 md:pb-12 pb-6 flex items-center justify-between",
+        "px-4 pb-6 md:px-8 md:pb-12 flex items-center justify-between",
         className
       )}
     >
@@ -47,7 +47,7 @@ export const CardCTA = ({
   return (
     <button
       className={cn(
-        "size-5 md:size-10 shrink-0 rounded-full border border-neutral-200 dark:border-neutral-800 flex items-center justify-center active:scale-[0.98] transition duration-200",
+        "size-5 md:size-10 shrink-0 rounded-full border border-[#C8A96A]/30 bg-[#C8A96A]/10 text-[#0B1F3A] dark:border-[#C8A96A]/20 dark:bg-[#C8A96A]/15 dark:text-[#F8FAFC] flex items-center justify-center active:scale-[0.98] transition duration-200 hover:bg-[#C8A96A]/20",
         className
       )}
       {...rest}
@@ -65,7 +65,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h3 className={cn("text-lg md:text-2xl font-bold font-display", className)}>
+    <h3
+      className={cn(
+        "text-lg md:text-2xl font-bold font-display text-[#0B1F3A] dark:text-white",
+        className
+      )}
+    >
       {children}
     </h3>
   );
@@ -81,7 +86,7 @@ export const CardSkeleton = ({
   return (
     <div
       className={cn(
-        "relative h-80 sm:h-60 md:h-80 overflow-hidden perspective-distant",
+        "relative h-80 sm:h-60 md:h-80 overflow-hidden perspective-distant rounded-b-[1.25rem]",
         className
       )}
     >
