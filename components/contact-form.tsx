@@ -60,12 +60,12 @@ export const ContactForm = () => {
     setLoading(true);
     try {
 
-      await fetch('', {
+      await fetch('https://6816fc46038b3682c7f3.nyc.appwrite.run', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...formData, hd: true }),
+        body: JSON.stringify({ ...formData, lp: true }),
         mode: 'no-cors',
       });
 
