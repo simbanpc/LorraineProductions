@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export const SkeletonTwo = () => {
   return (
-    <div className="flex-1 rounded-t-3xl gap-4 space-y-4 w-full h-full px-8 flex-col items-center justify-center">
+    <div className="flex-1 rounded-t-3xl gap-4 space-y-4 w-full h-full flex-col items-center justify-center">
       <div className="grid grid-cols-4 gap-2 justify-center max-w-md mx-auto">
         <Item />
         <a

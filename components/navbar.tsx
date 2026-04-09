@@ -42,10 +42,12 @@ export const Navbar = () => {
 
 export const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="flex md:hidden px-4 py-2 justify-between relative">
       <Logo />
-      <button onClick={() => setOpen(!open)}>
+
+      <button onClick={() => setOpen(true)}>
         <IconLayoutSidebar className="size-4" />
       </button>
 
@@ -53,18 +55,14 @@ export const MobileNavbar = () => {
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex h-dvh w-full flex-col justify-between px-4 py-1.5 bg-white/70 dark:bg-black/60 backdrop-blur-xl supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-black/40"
+            style={{
+              WebkitBackdropFilter: "blur(15px)",
               backdropFilter: "blur(15px)",
             }}
-            exit={{
-              opacity: 0,
-              backdropFilter: "blur(0px)",
-            }}
-            transition={{
-              duration: 0.2,
-            }}
-            className="fixed inset-0 h-full w-full z-50 px-4 py-1.5 flex flex-col justify-between"
           >
             <div>
               <div className="flex justify-between">
@@ -74,28 +72,21 @@ export const MobileNavbar = () => {
                 </button>
               </div>
 
-              <div className="flex flex-col gap-6 my-10">
+              <div className="my-10 flex flex-col gap-6">
                 {navlinks.map((item, index) => (
                   <motion.div
-                    initial={{
-                      opacity: 0,
-                      x: -4,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
+                    key={item.title}
+                    initial={{ opacity: 0, x: -4 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{
                       duration: 0.2,
-                      delay: index * 0.1,
+                      delay: index * 0.08,
                     }}
-                    key={index + item.title}
                   >
                     <Link
-                      key={index}
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="text-2xl text-neutral-600 dark:text-neutral-400 font-medium"
+                      className="text-2xl font-medium text-neutral-600 dark:text-neutral-400"
                     >
                       {item.title}
                     </Link>
@@ -103,12 +94,11 @@ export const MobileNavbar = () => {
                 ))}
               </div>
             </div>
-            <div>
-              <div className="flex items-center justify-end gap-4">
-                <Button asChild>
-                  <Link href="/contact">Work with us</Link>
-                </Button>
-              </div>
+
+            <div className="flex items-center justify-end gap-4">
+              <Button onClick={() => setOpen(false)} asChild>
+                <Link href="/contact">Work with us</Link>
+              </Button>
             </div>
           </motion.div>
         )}
