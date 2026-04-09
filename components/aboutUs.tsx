@@ -4,7 +4,6 @@ import { Heading } from "./heading";
 import { Subheading } from "./subheading";
 import { Container } from "./container";
 import Image from "next/image";
-import { AboutQuote } from "./aboutQuote";
 import { IconBrandLinkedin } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -18,7 +17,7 @@ export const About = () => {
   ];
   return (
     <>
-      <Container className="grid grid-cols-1 gap-10 px-6 py-20 md:grid-cols-2 md:py-28">
+      <Container className="grid grid-cols-1 gap-10 px-6 pb-20 md:grid-cols-2 md:pb-28 pt-10 md:pt-20 lg:pt-32">
         <div className="flex flex-col justify-center md:pr-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
             Meet the vision

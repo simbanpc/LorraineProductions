@@ -98,7 +98,7 @@ export const ContactForm = () => {
   ];
 
   return (
-  <Container className="grid grid-cols-1 gap-10 px-6 py-32 md:grid-cols-2 md:py-48">
+  <Container className="grid grid-cols-1 gap-10 px-6 pb-32 md:grid-cols-2 md:pb-48 pt-10 md:pt-20 lg:pt-32">
     <div className="flex flex-col justify-top">
       <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
         Contact
