@@ -5,25 +5,6 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const SkeletonOne = () => {
-  const featuredWork = [
-    {
-      title: "Westside Venture Partners",
-      subtitle: "Affordable housing and community revitalization",
-      icon: <Item src="/westside.jpeg" />,
-      badge: "Featured Work",
-      badgeClassName:
-        "bg-[#C8A96A]/15 text-[#C8A96A] border border-[#C8A96A]/30",
-    },
-    {
-      title: "Current Portfolio Property",
-      subtitle: "Active holding with future acquisition growth in view",
-      icon: <Item src="/LorraineProductions.png" />,
-      badge: "Current Holding",
-      badgeClassName:
-        "bg-[#0B1F3A]/10 text-[#0B1F3A] dark:bg-white/10 dark:text-white border border-[#0B1F3A]/15 dark:border-white/10",
-    },
-  ];
-
   const focusAreas = [
     {
       title: "Housing Development",

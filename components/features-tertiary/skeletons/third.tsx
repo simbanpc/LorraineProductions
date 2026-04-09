@@ -9,51 +9,6 @@ import {
 import React from "react";
 
 export const SkeletonThree = () => {
-  const organizations = [
-    {
-      name: "Women on the Cap Table",
-      href: "https://www.womencaptable.com/",
-      label: "Collaborative investor community",
-      align: "left",
-      className:
-        "left-4 top-6 md:left-8 md:top-8",
-      lineClassName:
-        "left-[42%] top-[30%] w-24 md:w-32 rotate-[165deg]",
-      badgeClassName:
-        "bg-[#C8A96A]/15 text-[#C8A96A] border border-[#C8A96A]/30",
-    },
-    {
-      name: "Golden Seeds",
-      href: "https://www.goldenseeds.com/",
-      label: "Women-led startup network",
-      align: "right",
-      className:
-        "right-4 top-20 md:right-8 md:top-12",
-      lineClassName:
-        "right-[40%] top-[38%] w-24 md:w-32 rotate-[18deg]",
-      badgeClassName:
-        "bg-[#0B1F3A]/10 text-[#0B1F3A] dark:bg-white/10 dark:text-white border border-[#0B1F3A]/15 dark:border-white/10",
-    },
-  ];
-
-  const supportAreas = [
-    {
-      title: "Source",
-      description: "Curated access to aligned early-stage opportunities",
-      icon: <Radar className="size-4" />,
-    },
-    {
-      title: "Evaluate",
-      description: "Collaborative diligence shaped by experience and perspective",
-      icon: <Search className="size-4" />,
-    },
-    {
-      title: "Support",
-      description: "Relationships, capital, and momentum beyond the first check",
-      icon: <Handshake className="size-4" />,
-    },
-  ];
-
   return (
     <div className="absolute inset-x-10 inset-y-2 mx-auto flex h-full w-full flex-1 flex-col overflow-hidden">
         <div className="relative flex-1 min-h-0 overflow-hidden">
