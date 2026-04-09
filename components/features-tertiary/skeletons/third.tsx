@@ -1,35 +1,117 @@
-import { ArrowIconReverse, ArrowIllustration } from "@/illustrations/grid";
-import { cn } from "@/lib/utils";
-import { IconBulb, IconSparkles } from "@tabler/icons-react";
+"use client";
+import { motion } from "motion/react";
+import {
+  Handshake,
+  Radar,
+  Search,
+  Sparkles,
+} from "lucide-react";
 import React from "react";
 
 export const SkeletonThree = () => {
+  const organizations = [
+    {
+      name: "Women on the Cap Table",
+      href: "https://www.womencaptable.com/",
+      label: "Collaborative investor community",
+      align: "left",
+      className:
+        "left-4 top-6 md:left-8 md:top-8",
+      lineClassName:
+        "left-[42%] top-[30%] w-24 md:w-32 rotate-[165deg]",
+      badgeClassName:
+        "bg-[#C8A96A]/15 text-[#C8A96A] border border-[#C8A96A]/30",
+    },
+    {
+      name: "Golden Seeds",
+      href: "https://www.goldenseeds.com/",
+      label: "Women-led startup network",
+      align: "right",
+      className:
+        "right-4 top-20 md:right-8 md:top-12",
+      lineClassName:
+        "right-[40%] top-[38%] w-24 md:w-32 rotate-[18deg]",
+      badgeClassName:
+        "bg-[#0B1F3A]/10 text-[#0B1F3A] dark:bg-white/10 dark:text-white border border-[#0B1F3A]/15 dark:border-white/10",
+    },
+  ];
+
+  const supportAreas = [
+    {
+      title: "Source",
+      description: "Curated access to aligned early-stage opportunities",
+      icon: <Radar className="size-4" />,
+    },
+    {
+      title: "Evaluate",
+      description: "Collaborative diligence shaped by experience and perspective",
+      icon: <Search className="size-4" />,
+    },
+    {
+      title: "Support",
+      description: "Relationships, capital, and momentum beyond the first check",
+      icon: <Handshake className="size-4" />,
+    },
+  ];
+
   return (
-    <div className="flex-1 rounded-t-3xl gap-2 flex flex-col z-20 mx-auto w-full h-full absolute inset-0 pt-2 px-2 perspective-[4000px] max-w-lg">
-      <ArrowIllustration className="absolute left-40 -top-4 mx-auto z-30" />
-      <ArrowIconReverse className="absolute left-32 -bottom-10 mx-auto blur-[2px]" />
-      <div
-        className={cn(
-          "flex items-center justify-center gap-20 h-[200%]",
-          "absolute -inset-x-[150%] -inset-y-40",
-          "[background-size:40px_40px]",
-          "[background-image:linear-gradient(to_right,var(--color-neutral-200)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-neutral-200)_1px,transparent_1px)]",
-          "dark:[background-image:linear-gradient(to_right,var(--color-neutral-700)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-neutral-700)_1px,transparent_1px)]",
-          "mask-radial-from-50% mask-t-from-50% mask-b-from-50%"
-        )}
-        style={{
-          transform: "rotateY(20deg) rotateX(50deg) rotateZ(40deg)",
-        }}
-      >
-        <div className="px-4 py-2 rounded-full bg-[#C8A96A]/15 text-[#C8A96A] border border-[#C8A96A]/30 font-medium flex items-center gap-2">
-          <IconBulb className="size-4" />
-          <span>Strategy</span>
+    <div className="absolute inset-x-10 inset-y-2 mx-auto flex h-full w-full flex-1 flex-col overflow-hidden">
+        <div className="relative flex-1 min-h-0 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.45 }}
+              className="relative flex h-[15rem] w-[15rem] items-center justify-center"
+            >
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full border border-dashed border-[#C8A96A]/35"
+              />
+
+              <motion.div
+                animate={{ scale: [1, 1.04, 1] }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-4 rounded-full border border-[#C8A96A]/20 bg-[radial-gradient(circle,rgba(200,169,106,0.14),transparent_70%)]"
+              />
+
+              <div className="relative z-20 flex h-[12rem] w-[12rem] flex-col items-center justify-center rounded-full border border-neutral-200 bg-white/95 px-5 text-center shadow-[0_18px_50px_rgba(11,31,58,0.10)] dark:border-white/10 dark:bg-[#0f2746]/90">
+                <div className="mb-2 flex size-11 items-center justify-center rounded-full bg-[#0B1F3A] text-white dark:bg-[#C8A96A] dark:text-[#0B1F3A]">
+                  <Sparkles className="size-5" />
+                </div>
+
+                <p className="text-sm font-semibold text-[#0B1F3A] dark:text-white">
+                  Investor Ecosystem
+                </p>
+
+                <p className="mt-2 text-[11px] leading-relaxed text-neutral-500 dark:text-neutral-400">
+                  Networks and communities that expand access to early-stage opportunities, informed investing, and long-term founder support.
+                </p>
+              </div>
+
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0"
+              >
+                <div className="absolute left-1/2 top-0 flex -translate-x-1/2 items-center gap-1 rounded-full border border-neutral-200 bg-white/90 px-2 py-1 text-[10px] font-medium text-neutral-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
+                  <Radar className="size-3" />
+                  Deal Flow
+                </div>
+                <div className="absolute bottom-5 left-3 flex items-center gap-1 rounded-full border border-neutral-200 bg-white/90 px-2 py-1 text-[10px] font-medium text-neutral-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
+                  <Search className="size-3" />
+                  Diligence
+                </div>
+                <div className="absolute bottom-5 right-3 flex items-center gap-1 rounded-full border border-neutral-200 bg-white/90 px-2 py-1 text-[10px] font-medium text-neutral-600 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-neutral-300">
+                  <Handshake className="size-3" />
+                  Growth
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
-        <div className="px-4 py-2 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-medium flex items-center gap-2">
-          <IconSparkles className="size-4" />
-          <span>Execution</span>
-        </div>
-      </div>
+
     </div>
   );
 };

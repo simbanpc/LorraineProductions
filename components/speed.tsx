@@ -22,16 +22,16 @@ export const Speed = () => {
           </Heading>
 
           <Subheading className="py-8">
-            We help turn vision into action through thoughtful investment, business guidance, and relationship-driven solutions. By identifying potential, strengthening foundations, and opening new pathways, Lorraine Productions LLC creates opportunities for individuals, businesses, and communities to grow with purpose.
+            We turn vision into action through thoughtful guidance, strategic investment, and relationship-driven solutions. By identifying potential, strengthening foundations, and opening new pathways, Lorraine Productions LLC helps individuals, businesses, and communities grow with purpose.
           </Subheading>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-10 md:my-20">
             <Card className="rounded-tl-3xl rounded-bl-3xl">
               <CardSkeleton>
-                <SkeletonTwo />
+                <SkeletonOne />
               </CardSkeleton>
               <CardContent>
-                <CardTitle>Strategic Guidance</CardTitle>
+                <CardTitle>Vision</CardTitle>
                 <CardCTA>
                   <IconPlus />
                 </CardCTA>
@@ -39,10 +39,10 @@ export const Speed = () => {
             </Card>
             <Card>
               <CardSkeleton>
-                <SkeletonOne />
+                <SkeletonTwo />
               </CardSkeleton>
               <CardContent>
-                <CardTitle>Investment Insight</CardTitle>
+                <CardTitle>Opportunity</CardTitle>
                 <CardCTA>
                   <IconPlus />
                 </CardCTA>
@@ -53,7 +53,7 @@ export const Speed = () => {
                 <SkeletonThree />
               </CardSkeleton>
               <CardContent>
-                <CardTitle>Collaborative Partnerships</CardTitle>
+                <CardTitle>Connection</CardTitle>
                 <CardCTA>
                   <IconPlus />
                 </CardCTA>

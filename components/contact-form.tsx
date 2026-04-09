@@ -93,7 +93,7 @@ export const ContactForm = () => {
       {
       name: "LinkedIn",
       icon:<IconBrandLinkedin />,
-      href: "https://www.linkedin.com/in/",
+      href: "https://www.linkedin.com/in/sophiashoate/",
     }
   ];
 
@@ -120,7 +120,7 @@ export const ContactForm = () => {
             Email
           </p>
           <p className="mt-1 text-sm font-medium text-[#0B1F3A] dark:text-white">
-            tt@gmail.com
+            sophiashoate@gmail.com
           </p>
         </div>
 

@@ -1,52 +1,52 @@
 import { cn } from "@/lib/utils";
 import {
-  IconChartBar,
-  IconBuildingBank,
-  IconTrendingUp,
+  IconBulb,
+  IconSpeakerphone,
+  IconUsersGroup,
   IconClock,
 } from "@tabler/icons-react";
 import React from "react";
 
 export const SkeletonOne = () => {
   return (
-    <div className="perspective-distant rotate-z-15 -rotate-y-20 rotate-x-30 scale-[1.2] h-full w-full -translate-y-10 mask-radial-from-50% mask-r-from-50%">
+    <div className="perspective-distant rotate-z-12 -rotate-y-16 rotate-x-24 scale-[1.08] h-full w-full -translate-y-6 mask-radial-from-50% mask-r-from-50%">
       <SkeletonCard
         className="absolute bottom-0 left-12 max-w-[90%] z-30"
         icon={
           <div className="flex size-7 items-center justify-center rounded-full bg-[#C8A96A]/15 text-[#C8A96A]">
-            <IconChartBar className="size-4" />
+            <IconBulb className="size-4" />
           </div>
         }
-        title="Market Analysis"
-        description="Evaluating regional trends, asset performance, and growth indicators to identify high-potential opportunities."
-        badge={<Badge text="ACTIVE" variant="gold" />}
-        tags={["Market Trends", "Asset Value", "Growth"]}
+        title="Guidance"
+        description="Turning vision into clear direction through thoughtful support, planning, and purpose-driven leadership."
+        badge={<Badge text="VISION" variant="gold" />}
+        tags={["Direction", "Strategy", "Leadership"]}
       />
 
       <SkeletonCard
         className="absolute bottom-8 left-8 z-20"
         icon={
           <div className="flex size-7 items-center justify-center rounded-full bg-[#0B1F3A]/10 text-[#0B1F3A] dark:bg-white/10 dark:text-white">
-            <IconBuildingBank className="size-4" />
+            <IconUsersGroup className="size-4" />
           </div>
         }
-        title="Portfolio Review"
-        description="Reviewing current holdings, long-term value, and strategic alignment to support sustainable decision-making."
-        badge={<Badge text="REVIEW" variant="navy" />}
-        tags={["Portfolio", "Value", "Strategy"]}
+        title="Mentorship"
+        description="Supporting people and organizations through encouragement, insight, and leadership-centered development."
+        badge={<Badge text="PEOPLE" variant="navy" />}
+        tags={["Mentorship", "Growth", "Support"]}
       />
 
       <SkeletonCard
         className="absolute bottom-20 left-4 max-w-[80%] z-10"
         icon={
           <div className="flex size-7 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-            <IconTrendingUp className="size-4" />
+            <IconSpeakerphone className="size-4" />
           </div>
         }
-        title="Opportunity Forecast"
-        description="Highlighting projected upside, acquisition potential, and investment pathways backed by thoughtful analysis."
-        badge={<Badge text="INSIGHT" variant="success" />}
-        tags={["Forecast", "Returns", "Opportunity"]}
+        title="Advocacy"
+        description="Creating space for leadership, engagement, and conversations that move communities and ideas forward."
+        badge={<Badge text="IMPACT" variant="success" />}
+        tags={["Advocacy", "Community", "Purpose"]}
       />
     </div>
   );
@@ -78,9 +78,7 @@ const SkeletonCard = ({
     >
       <div className="flex items-center gap-3">
         {icon}
-        <p className="text-xs md:text-sm font-medium">
-          {title}
-        </p>
+        <p className="text-xs md:text-sm font-medium">{title}</p>
         <div className="ml-auto">{badge}</div>
       </div>
 

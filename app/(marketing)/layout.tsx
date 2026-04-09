@@ -5,8 +5,10 @@ export default function MarketingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      {children}
-    </>
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-1 flex items-center justify-center">
+        {children}
+      </div>
+    </div>
   );
 }

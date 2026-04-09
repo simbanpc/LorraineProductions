@@ -13,17 +13,11 @@ export const About = () => {
       {
       name: "LinkedIn",
       icon:<IconBrandLinkedin />,
-      href: "https://www.linkedin.com/in/",
+      href: "https://www.linkedin.com/in/sophiashoate/",
     }
   ];
   return (
     <>
-      <AboutQuote
-        quote="I ..."
-        author="Sophia Shoate"
-        className="px-6 pt-32 md:pt-40"
-      />
-
       <Container className="grid grid-cols-1 gap-10 px-6 py-20 md:grid-cols-2 md:py-28">
         <div className="flex flex-col justify-center md:pr-10">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#C8A96A]">
@@ -56,7 +50,7 @@ export const About = () => {
           </div>
 
           <Subheading className="mt-4 text-left text-base leading-relaxed">
-            Strategist. Storycrafter...
+            Strategist. Visionary. Impact Driven
           </Subheading>
 
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 font-inter max-w-xl md:text-base">
@@ -79,7 +73,7 @@ export const About = () => {
 
           <div className="mt-8 flex flex-wrap gap-2">
             <span className="rounded-full border border-[#C8A96A]/20 bg-[#C8A96A]/10 px-3 py-1 text-xs font-medium text-[#0B1F3A] dark:border-[#C8A96A]/20 dark:bg-[#C8A96A]/10 dark:text-white">
-              Real Estate
+              Investing
             </span>
             <span className="rounded-full border border-[#C8A96A]/20 bg-[#C8A96A]/10 px-3 py-1 text-xs font-medium text-[#0B1F3A] dark:border-[#C8A96A]/20 dark:bg-[#C8A96A]/10 dark:text-white">
               Consulting

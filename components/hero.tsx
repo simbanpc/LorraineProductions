@@ -20,7 +20,7 @@ export const Hero = () => {
         </Heading>
 
         <Subheading className="py-8">
-          Real Estate • Business Consulting • Mentorship & Leadership
+          Investing • Business Consulting • Mentorship & Leadership
         </Subheading>
         <div className="flex items-center gap-6">
           <Button className="shadow-brand"><Link href="/contact">Work with us</Link></Button>

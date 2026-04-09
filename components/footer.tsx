@@ -32,6 +32,21 @@ export const Footer = () => {
       image:"/douglassaires.png"
     },
     {
+      title: "Leadership Atlanta",
+      href: "https://www.leadershipatlanta.org/",
+      image:"/LeadershipAtlanta.avif"
+    },
+    {
+      title: "OnBoard",
+      href: "https://www.onboardinc.org/",
+      image:"/onboard.webp"
+    },
+    {
+      title: "Oklahoma State University",
+      href: "https://go.okstate.edu/",
+      image:"/OSU.svg"
+    },
+    {
       title: "Cool Girls",
       href: "https://thecoolgirls.org/",
       image:"/cropped-Cool-Girls-Logo.png"
@@ -76,7 +91,7 @@ export const Footer = () => {
       <Container className="relative z-20 flex flex-col gap-10 lg:flex-row lg:justify-between">
         <div className="lg:col-span-2 flex flex-col gap-4 items-start">
           <Logo />
-          <Subheading>Real Estate • Business Consulting • Mentorship & Leadership</Subheading>
+          <Subheading>Investing • Business Consulting • Mentorship & Leadership</Subheading>
           <Button className="shadow-brand"><Link href="/contact">Work with us</Link></Button>
         </div>
         <div className="flex flex-col gap-4">
@@ -140,8 +155,10 @@ export const Footer = () => {
         <div className="flex md:items-end items-start flex-col gap-4">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-4 *:text-sm *:text-neutral-500">
+              {/*
               <Link href="/privacy">Privacy Policy</Link>
               <Link href="/terms">Terms of Service</Link>
+              */}
             </div>
           </div>
           <div className="flex items-center gap-4">
