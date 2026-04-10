@@ -7,16 +7,23 @@ export const metadata: Metadata = {
   description:
     "Building Legacy. Creating Opportunity. Empowering the Future. Investing. Business Consulting. Mentorship & Leadership.",
   openGraph: {
+    type: "website",
     title: "Lorraine Productions",
     description: "Building Legacy. Creating Opportunity. Empowering the Future. Investing. Business Consulting. Mentorship & Leadership.",
     siteName: "Lorraine Productions",
-    url: ""
+    url: "https://lorraineproductions.com",
+    images: [{
+    url: "https://api.npc.nexus/v1/storage/buckets/657a567ac07788d7c486/files/HDOGTEAL/view?project=npcnexus",
+  }],
   },
   twitter:{
     title: "Lorraine Productions",
     description: "Building Legacy. Creating Opportunity. Empowering the Future. Investing. Business Consulting. Mentorship & Leadership.",
-    site: "",
-    card: "summary"
+    site: "https://lorraineproductions.com",
+    card: "summary",
+    images: [{
+    url: "https://api.npc.nexus/v1/storage/buckets/657a567ac07788d7c486/files/HDOGTEAL/view?project=npcnexus",
+  }],
   }
 };
 

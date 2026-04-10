@@ -1,61 +1,56 @@
 "use client";
-
 import { LogoIcon } from "@/components/logo";
-import {
-  CogIcon,
-  ErrorIcon,
-  FileIcon,
-  HubspotIcon,
-  SalesforceIcon,
-  SheetsIcon,
-  SlackIcon,
-} from "@/icons";
 import { cn } from "@/lib/utils";
 import {
-  IconBrandInstagram,
-  IconBrandMeta,
-  IconBrandSlack,
   IconCircleDashedCheck,
 } from "@tabler/icons-react";
-import { motion } from "motion/react";
 
 export const SkeletonTwo = () => {
   return (
     <div
-      className="flex-1 rounded-t-3xl gap-2 flex items-center justify-center  w-full h-full absolute inset-x-0 p-2"
+      className="flex-1 rounded-t-3xl gap-2 flex items-center justify-center w-full h-full absolute inset-x-0 p-2"
       style={{
         transform: "rotateY(20deg) rotateX(20deg) rotateZ(-20deg)",
       }}
     >
       <Circle className="flex items-center justify-center border-neutral-200 dark:border-neutral-700 shadow-sm">
         <LogoIcon className="size-10 text-neutral-400" />
-        <RevolvingCard className="bg-white dark:bg-neutral-800">
-          <IconBrandSlack className="size-8" />
+        <RevolvingCard className="[--initial-position:20deg] [--translate-position:250px] size-auto ring-0 shadow-none bg-transparent w-32">
+          <SkeletonCard
+            className="absolute bottom-0 left-12 max-w-[90%] z-30 bg-white dark:bg-neutral-800"
+            icon={<IconCircleDashedCheck className="size-4" />}
+            title="Investment"
+          />
         </RevolvingCard>
-        <RevolvingCard className="[--initial-position:80deg] [--translate-position:160px] [--orbit-duration:20s] bg-white dark:bg-neutral-800">
-          <IconBrandMeta className="size-8 text-blue-500" />
-        </RevolvingCard>
-        <RevolvingCard className="[--initial-position:140deg] [--translate-position:180px] [--orbit-duration:15s] bg-white dark:bg-neutral-800">
-          <IconBrandInstagram className="size-8 text-red-500" />
-        </RevolvingCard>
-        <RevolvingCard className="[--initial-position:240deg] [--translate-position:220px] [--orbit-duration:25s] bg-white dark:bg-neutral-800">
-          <SheetsIcon className="size-8" />
-        </RevolvingCard>
-
-        <RevolvingCard className="[--initial-position:20deg] [--translate-position:250px] [--orbit-duration:30s] size-auto ring-0 shadow-none bg-transparent w-60">
+        <RevolvingCard className="[--initial-position:80deg] [--translate-position:160px] [--orbit-duration:12s] size-auto ring-0 shadow-none bg-transparent w-32">
           <SkeletonCard
             className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white dark:bg-neutral-800"
             icon={<IconCircleDashedCheck className="size-4" />}
-            title="Campaign Planner"
-            description="Creates clear, ready-to-use campaign briefs using product info."
+            title="Community"
+          />
+        </RevolvingCard>
+        <RevolvingCard className="[--translate-position:180px] [--orbit-duration:13s] size-auto ring-0 shadow-none bg-transparent w-32">
+          <SkeletonCard
+            className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white dark:bg-neutral-800"
+            icon={<IconCircleDashedCheck className="size-4" />}
+            title="Engagement"
           />
         </RevolvingCard>
 
-        <RevolvingCard className="[--initial-position:60deg] [--translate-position:210px] [--orbit-duration:20s] size-auto ring-0 shadow-none bg-transparent w-60">
+        <RevolvingCard className="[--initial-position:140deg] [--orbit-duration:30s] size-auto ring-0 shadow-none bg-transparent w-60">
           <SkeletonCard
-            className="absolute bottom-0 left-12  max-w-[90%] z-30 bg-white dark:bg-neutral-800"
+            className="absolute bottom-0 left-12 max-w-[90%] z-30 bg-white dark:bg-neutral-800"
             icon={<IconCircleDashedCheck className="size-4" />}
-            title="Ready made solutions"
+            title="Connection"
+            description="Bringing people, purpose, and opportunity together through trusted relationships."
+          />
+        </RevolvingCard>
+
+        <RevolvingCard className="[--initial-position:60deg] [--translate-position:210px] [--orbit-duration:20s] size-auto ring-0 shadow-none bg-transparent w-32">
+          <SkeletonCard
+            className="absolute bottom-0 left-12 max-w-[90%] z-30 bg-white dark:bg-neutral-800"
+            icon={<IconCircleDashedCheck className="size-4" />}
+            title="Mentorship"
           />
         </RevolvingCard>
       </Circle>

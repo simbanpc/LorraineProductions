@@ -5,10 +5,7 @@ import { Subheading } from "./subheading";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import {
-  IconBrandFacebook,
-  IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandX,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
@@ -163,17 +160,8 @@ export const Footer = () => {
           </div>
           <div className="flex items-center gap-4">
             <ModeToggle />
-            <Link href="/" target="_blank" rel="noopener noreferrer">
-              <IconBrandX className="size-4" />
-            </Link>
-            <Link href="/" target="_blank" rel="noopener noreferrer">
-              <IconBrandInstagram className="size-4" />
-            </Link>
-            <Link href="/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/sophiashoate/" target="_blank" rel="noopener noreferrer">
               <IconBrandLinkedin className="size-4" />
-            </Link>
-            <Link href="/" target="_blank" rel="noopener noreferrer">
-              <IconBrandFacebook className="size-4" />
             </Link>
           </div>
         </div>

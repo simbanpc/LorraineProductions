@@ -6,7 +6,7 @@ import { Card, CardContent, CardCTA, CardSkeleton, CardTitle } from "./features/
 import { SkeletonOne } from "./features/skeletons/first";
 import { IconPlus } from "@tabler/icons-react";
 import { SkeletonTwo } from "./features/skeletons/second";
-import { SkeletonThree } from "./features/skeletons/third";
+import { SkeletonTwo as SkeletonThree } from "./features-secondary/skeletons/second";
 
 export const Speed = () => {
   return (

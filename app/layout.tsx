@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Navbar } from "@/components/navbar";
@@ -11,7 +11,7 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
+const inter = Manrope({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -22,16 +22,23 @@ export const metadata: Metadata = {
   description:
     "Building Legacy. Creating Opportunity. Empowering the Future. Investing. Business Consulting. Mentorship & Leadership.",
   openGraph: {
+    type: "website",
     title: "Lorraine Productions",
     description: "Building Legacy. Creating Opportunity. Empowering the Future. Investing. Business Consulting. Mentorship & Leadership.",
     siteName: "Lorraine Productions",
-    url: ""
+    url: "https://lorraineproductions.com",
+    images: [{
+    url: "/LorraineProductions2.png",
+  }],
   },
   twitter:{
     title: "Lorraine Productions",
     description: "Building Legacy. Creating Opportunity. Empowering the Future. Investing. Business Consulting. Mentorship & Leadership.",
-    site: "",
-    card: "summary"
+    site: "https://lorraineproductions.com",
+    card: "summary",
+    images: [{
+    url: "/LorraineProductions2.png",
+  }],
   }
 };
 
