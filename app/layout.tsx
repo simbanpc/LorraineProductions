@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Lorraine Productions",
     url: "https://lorraineproductions.com",
     images: [{
-    url: "/LorraineProductions2.png",
+    url: "/LorraineProductions3.png",
   }],
   },
   twitter:{
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     site: "https://lorraineproductions.com",
     card: "summary",
     images: [{
-    url: "/LorraineProductions2.png",
+    url: "/LorraineProductions3.png",
   }],
   }
 };

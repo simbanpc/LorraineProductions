@@ -14,7 +14,7 @@ export const Logo = ({ className }: { className?: string }) => {
 export const LogoIcon = (props: React.SVGAttributes<SVGSVGElement>) => {
   return (
     <Image
-      src="/LorraineProductions2.png"
+      src="/LorraineProductions3.png"
       alt="LorraineProductions"
       width={"64"}
       height={"64"}

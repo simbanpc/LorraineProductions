@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Lorraine Productions",
     url: "https://lorraineproductions.com",
     images: [{
-    url: "https://api.npc.nexus/v1/storage/buckets/657a567ac07788d7c486/files/HDOGTEAL/view?project=npcnexus",
+    url: "/LorraineProductions3.png",
   }],
   },
   twitter:{
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     site: "https://lorraineproductions.com",
     card: "summary",
     images: [{
-    url: "https://api.npc.nexus/v1/storage/buckets/657a567ac07788d7c486/files/HDOGTEAL/view?project=npcnexus",
+    url: "/LorraineProductions3.png",
   }],
   }
 };
